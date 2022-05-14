@@ -22,17 +22,13 @@
 		<h4 >Near Earth Objects</h4> 
 	</div>
 	
-	<?php echo $start_date ?>
-	<?php echo $end_date ?>
-
-
-	<form class="row row-cols-lg-auto g-3 align-items-center mx-4 border-bottom pb-2" >
+	<form class="row row-cols-lg-auto g-3 align-items-center mx-4 border-bottom mb-2 pb-2" >
 	  
 	  <div class="col-12">
 	    <label class="visually-hidden" for="start_date">Start Date : </label>
 	    <div class="input-group">
 	      <div class="input-group-text">Start Date :</div>
-	      <input type="date" class="form-control" id="start_date" placeholder="start date" readonly />
+	      <input type="text" class="form-control" id="start_date" placeholder="start date" readonly />
 	    </div>
 	  </div>
 
@@ -40,7 +36,7 @@
 	    <label class="visually-hidden" for="end_date">End Date : </label>
 	    <div class="input-group">
 	      <div class="input-group-text">End Date :</div>
-	      <input type="date" class="form-control" id="end_date" placeholder="end_date" readonly/>
+	      <input type="text" class="form-control" id="end_date" placeholder="end_date" readonly/>
 	    </div>
 	  </div>
 	  
@@ -51,53 +47,60 @@
 
 <!-- Fastest Asteroid section -->
 <div class = "container">
-	<div class = "row col-md-6">
-		<label >Fastest Asteroid (km/h) :</label>
-		<form >
-		  <div class="form-outline mb-4">
-		    <label class="form-label" for="ID">ID : </label>
-		    <input type="text" id="ID" class="form-control" readonly />
-		  </div>
+	<div class = "row">
+		<div class = "col-md-6">		
+			<form class = "border border-1">
+			  <label >Fastest Asteroid (km/h) :</label>
+			  <div class="form-outline mb-1">
+			    <label class="form-label" for="ID">ID : </label>
+			    <input type="text" id="ID" class="form-control" readonly />
+			  </div>
 
-		  <div class="form-outline mb-4">
-		    <label class="form-label" for="ID">Speed :</label>
-		    <input type="text" id="speed" class="form-control" readonly />
-		  </div>
-		</form>
-	</div>
+			  <div class="form-outline mb-1">
+			    <label class="form-label" for="ID">Speed :</label>
+			    <input type="text" id="speed" class="form-control" readonly />
+			  </div>
+			</form>
+	
+		</div>	
+	
 
  
 	<!-- Closest Asteroid section  -->
-	<div class = "row col-md-6">
-		<label >Closest Asteroid :</label>
-		<form>
-		  <div class="form-outline mb-4">
-		    <label class="form-label" for="ID">ID : </label>
-		    <input type="text" id="ID" class="form-control" readonly />
-		  </div>
+	
+		<div class = "col-md-6">
+			<form class = "border border-1">
+			  <label >Closest Asteroid :</label>
+			  <div class="form-outline mb-1 "> 
+			    <label class="form-label" for="ID">ID : </label>
+			    <input type="text" id="ID" class="form-control" readonly />
+			  </div>
 
-		  <div class="form-outline mb-4">
-		    <label class="form-label" for="distance">Distance(km) :</label>
-		    <input type="text" id="distance" class="form-control" readonly />
-		  </div>
-		</form>
+			  <div class="form-outline mb-1">
+			    <label class="form-label" for="distance">Distance(km) :</label>
+			    <input type="text" id="distance" class="form-control" readonly />
+			  </div>
+			</form>
+		</div>
 	</div>
+	<div>
+	 	<!-- <form> -->
+			  <div class="form-outline mb-1 col-md-6">
+			    <label class="form-label" for="avg_size">Average Size of the Asteroids in kilometers : </label>
+			    <input type="text" id="avg_size" class="form-control" readonly />
+			  </div>
+		 
+		<!-- </form> -->
+	</div>
+
  </div>
-<div>  
-	<form>
-		  <div class="form-outline mb-4">
-		    <label class="form-label" for="avg_size">Average Size of the Asteroids in kilometers : </label>
-		    <input type="text" id="avg_size" class="form-control" readonly />
-		  </div>
-	 
-	</form>
-</div>
+ 
 
 
 <canvas id="myChart" width="400" height="400"></canvas>
 <script>
-var start_date = <?php echo $start_date ?>;	
-var end_date = <?php echo $end_date ?>;	
+const start_date = '<?php echo $start_date ?>';	
+const end_date = '<?php echo $end_date ?>';	
 
 console.log(start_date);
 document.getElementById("start_date").value = start_date;
