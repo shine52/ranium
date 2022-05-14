@@ -74,24 +74,24 @@ class neoController extends Controller
         //compute the average size
         $averageSizeKms = $totalSizeKms/$element_count;
 
-        // return view('neoView', [
-        //     'asteroidList' => $asteroidList,
-        //     'start_date'=>$start_date,
-        //     'end_date'=>$end_date,
-        //     'averageSizeKms'=>$averageSizeKms,
-        //     'fastestAsteroid' =>[
-        //         'id'=>$fastestAsteroidId,
-        //         'speedKmph'=> $fastestAsteroidSpeed,
-        //      ]
+        return view('neoView', [
+            'asteroidList' => $asteroidList,
+            'start_date'=>$start_date,
+            'end_date'=>$end_date,
+            'averageSizeKms'=>$averageSizeKms,
+            'fastestAsteroid' =>[
+                'id'=>$fastestAsteroidId,
+                'speedKmph'=> $fastestAsteroidSpeed,
+             ]
         
-        //      'closestAsteroid' =>[
-        //        'id'=>$closestAsteroidId,
-        //        'distanceKms'=> $closestAsteroidDistanceKms,
-        //      ],
-        //      graphData=>$graphData
-        // ]);
+             'closestAsteroid' =>[
+               'id'=>$closestAsteroidId,
+               'distanceKms'=> $closestAsteroidDistanceKms,
+             ],
+             graphData=>$graphData
+        ]);
         
-        return view('neoView',['start_date'=>$start_date,'end_date'=>$end_date]);
+        // return view('neoView',['start_date'=>$start_date,'end_date'=>$end_date]);
 
 
      }
